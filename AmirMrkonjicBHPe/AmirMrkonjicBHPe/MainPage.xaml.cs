@@ -12,11 +12,14 @@ namespace AmirMrkonjicBHPe
     public partial class MainPage : ContentPage
     {
         public IList<DodatneUsluge> dodatneUsluge { get; set; }
-        public IList<Mjesto> lokacijaPrimaoca { get; set; }
+        public List<Mjesto> lokacijaPrimaoca { get; set; }
         public IList<VrstaPosiljke> vrstaPosiljke { get; set; }
         public MainPage()
         {
             InitializeComponent();
+
+            RokIsporukePicker.MinimumDate = DateTime.Now;
+            RokIsporukePicker.MaximumDate = DateTime.Now.AddDays(3);
 
             dodatneUsluge = new List<DodatneUsluge>();
             dodatneUsluge.Add(new DodatneUsluge { Id = 1, NazivUsluge = "Hitna pošiljka", Cijena = 30 });
@@ -28,11 +31,24 @@ namespace AmirMrkonjicBHPe
             dodatneUsluge.Add(new DodatneUsluge { Id = 7, NazivUsluge = "Pakovanje", Cijena = 60 });
             dodatneUsluge.Add(new DodatneUsluge { Id = 8, NazivUsluge = "Dodatno osiguranje", Cijena = 65 });
 
+            HitnaPosiljkaLB.Text = dodatneUsluge[0].NazivUsluge;
+            DostavaVikendomLB.Text = dodatneUsluge[1].NazivUsluge;
+            PovratOtpremniceLB.Text = dodatneUsluge[2].NazivUsluge;
+            LomljivoLB.Text = dodatneUsluge[3].NazivUsluge;
+            OtvaranjePosiljkeLB.Text = dodatneUsluge[4].NazivUsluge;
+            NaplataPouzecemLB.Text = dodatneUsluge[5].NazivUsluge;
+            PakovanjeLB.Text = dodatneUsluge[6].NazivUsluge;
+            DodatnoOsiguranjeLB.Text = dodatneUsluge[7].NazivUsluge;
+
+
             lokacijaPrimaoca = new List<Mjesto>();
             lokacijaPrimaoca.Add(new Mjesto { Id = 1, Naziv = "Zenica", Udaljenost = 10 });
             lokacijaPrimaoca.Add(new Mjesto { Id = 2, Naziv = "Sarajevo", Udaljenost = 100 });
             lokacijaPrimaoca.Add(new Mjesto { Id = 3, Naziv = "Travnik", Udaljenost = 50 });
             lokacijaPrimaoca.Add(new Mjesto { Id = 4, Naziv = "Tešanj", Udaljenost = 70 });
+            
+            MjestoPosaljioca.ItemsSource = lokacijaPrimaoca;
+            MjestoPrimaoca.ItemsSource = lokacijaPrimaoca;
 
             vrstaPosiljke = new List<VrstaPosiljke>();
             vrstaPosiljke.Add(new VrstaPosiljke { Id = 1, Vrsta = "Paket", FaktorCijene = 5, slika = "box.png" });

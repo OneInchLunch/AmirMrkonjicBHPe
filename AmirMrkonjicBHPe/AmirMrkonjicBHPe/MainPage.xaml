@@ -33,10 +33,58 @@
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Horizontal">
                     <CheckBox x:Name="HitnaPosiljkaCB" />
-                    <Label x:Name="HitnaPosiljkaLB" />
+                    <Label x:Name="HitnaPosiljkaLB" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="DostavaVikendomCB" />
+                    <Label x:Name="DostavaVikendomLB" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="PovratOtpremniceCB" />
+                    <Label x:Name="PovratOtpremniceLB" VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="LomljivoCB" />
+                    <Label x:Name="LomljivoLB" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="OtvaranjePosiljkeCB" />
+                    <Label x:Name="OtvaranjePosiljkeLB" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="NaplataPouzecemCB" />
+                    <Label x:Name="NaplataPouzecemLB" VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="PakovanjeCB" />
+                    <Label x:Name="PakovanjeLB" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="DodatnoOsiguranjeCB" />
+                    <Label x:Name="DodatnoOsiguranjeLB" VerticalOptions="Center"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>
+        <Picker x:Name="MjestoPosaljioca"
+                HorizontalOptions="Center"
+                Title="Mjesto/Grad pošaljioca"
+                ItemDisplayBinding="{Binding Naziv}"
+                SelectedItem="{Binding Udaljenost}"
+                />
+        <Picker x:Name="MjestoPrimaoca"
+                HorizontalOptions="Center"
+                Title="Mjesto/Grad primaoca"
+                ItemDisplayBinding="{Binding Naziv}"
+                SelectedItem="{Binding Udaljenost}"
+                />
+        <Label Text="Udaljenost se zaokružuje na jedinicnu vrijednost kilometra" FontSize="8"/>
+        <Button x:Name="Izracunaj"
+                Text="IZRACUNAJ VRIJEDNOST POŠILJKE" />
+        <Label Text="Iznos cijene poštanskh usluga je informativan" FontSize="8"/>
     </StackLayout>
 
 </ContentPage>
