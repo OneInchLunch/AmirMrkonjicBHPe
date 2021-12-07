@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AmirMrkonjicBHPe.MainPage">
+
+    <StackLayout>
+        <Image Source="logo.png"  WidthRequest="150" HorizontalOptions="Start"/>
+        <Frame Padding="24" CornerRadius="0">
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Start" TextColor="Black" FontSize="24">
+                <Label.Text>
+                    Dobrodošli! Amir Mrkonjić Odaberite vašu uslugu
+                </Label.Text>
+            </Label>
+        </Frame>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <DatePicker x:Name="RokIsporukePicker"
+                        Format="dd.MM.yyyy"/>
+            <Entry x:Name="MasaEntry" Placeholder="Masa(kg)" />
+        </StackLayout>
+        <StackLayout Spacing="40" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <StackLayout>
+                <CheckBox x:Name="PaketCB"/>
+                <Image x:Name="PaketIMG" WidthRequest="100"/>
+                <Label x:Name="PaketLB" HorizontalOptions="Center" Text="PAKET" TextColor="Blue" />
+            </StackLayout>
+            <StackLayout>
+                <CheckBox x:Name="DokumentCB"/>
+                <Image x:Name="DokumentIMG" WidthRequest="100"/>
+                <Label x:Name="DokumentLB" HorizontalOptions="Center" Text="DOKUMENT" TextColor="Blue" />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="HitnaPosiljkaCB" />
+                    <Label x:Name="HitnaPosiljkaLB" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
